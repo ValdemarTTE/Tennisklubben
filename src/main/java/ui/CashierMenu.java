@@ -39,6 +39,10 @@ public class CashierMenu {
                     running = false;
                     break;
 
+                default:
+                System.out.println("Ugyldigt input, prøv igen.");
+                running = true;
+                break;
             }
         }
     }
