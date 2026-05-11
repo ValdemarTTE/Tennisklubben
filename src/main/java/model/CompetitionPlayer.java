@@ -22,9 +22,7 @@ public class CompetitionPlayer extends Member {
         results.add(result);
     }
 
-    public ArrayList<TrainingResult> getBestResults() {
-
-        for(TrainingResult p : results) {
+    public ArrayList<TrainingResult> getBestResults(CompetitionPlayer player) {
 
         }
     }
