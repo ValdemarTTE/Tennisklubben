@@ -6,6 +6,7 @@ public class ChairmanMenu {
 
     private Scanner scanner;
 
+    // Viser formandens menu
     public void startChairmanMenu() {
 
         boolean running = true;

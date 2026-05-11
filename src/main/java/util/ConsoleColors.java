@@ -2,6 +2,8 @@ package util;
 
 public class ConsoleColors {
 
+    // Alle farver man kan bruge i ui klasser
+
     public static final String RESET = "\u001B[0m";
     public static final String GREEN = "\u001B[92m";;
     public static final String YELLOW = "\u001B[93m";

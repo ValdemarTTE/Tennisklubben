@@ -6,6 +6,7 @@ public class CoachMenu {
 
     private Scanner scanner;
 
+    // Viser trænermenu
     public void startCoachMenu() {
 
         boolean running = true;

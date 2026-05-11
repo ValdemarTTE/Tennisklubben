@@ -10,6 +10,7 @@ public class MainMenu {
     CashierMenu menuB = new CashierMenu();
     CoachMenu menuC = new CoachMenu();
 
+    // viser hovedmenu
     public void run() {
 
         boolean running = true;
