@@ -6,6 +6,7 @@ public class CashierMenu {
 
     private Scanner scanner;
 
+    // Viser kasserermenu
     public void startCashierMenu() {
 
         boolean running = true;
