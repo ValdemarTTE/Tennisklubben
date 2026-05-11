@@ -1,18 +1,12 @@
 package logger;
 
 public enum LogLevel {
-    INFO ("Info"),
-    WARNING("Warning"),
-    ERROR ("Error");
+    INFO,
+    WARNING,
+    ERROR;
 
-    private final String label;
 
-    LogLevel(String label) {
-        this.label = label;
-    }
-
-    @Override
-    public String toString() {
-        return label;
+    public String label() {
+        return name().charAt(0) + name().substring(1).toLowerCase();
     }
 }
