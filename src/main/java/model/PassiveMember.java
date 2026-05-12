@@ -1,12 +1,14 @@
 package model;
 
+import java.time.LocalDate;
+
 public class PassiveMember extends Member {
-    public PassiveMember(int memberId, String name) {
-        super(memberId, name, MemberType.PASSIV);
-        System.out.println("PassivMember created:" + name);
+    public PassiveMember (int memberId, String name, int age, boolean isActive, boolean isCompetitive, boolean hasPaid, LocalDate createDate, MemberType memberType) {
+        super(memberId, name, age, isActive, isCompetitive, hasPaid, createDate, memberType);
     }
+
     @Override
-    public double calculateFee() {
+    public double getDiscount() {
         return 250;
     }
 }

@@ -2,9 +2,9 @@ package model;
 
 public enum MemberType {
     ACTIVE,
-    PASSIV,
+    PASSIVE,
     JUNIOR,
     SENIOR,
-    COMPETETIVE,
-    CASUAL;
+    COMPETITIVE,
+    CASUAL
 }
