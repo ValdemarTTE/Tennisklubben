@@ -1,15 +1,36 @@
 package validators;
 
-public class MemberValidator {
-    boolean validate(Object obj) {
+import model.Member;
+
+public class MemberValidator implements IValidator<Member>  {
+    private String errorMessage;
+
+    @Override
+    public boolean validate(Member member ) {
+        if (!checkName(member.getName()));
+        {
+            errorMessage = "Invalidate Name";
+            return false;
+        }
+        if (!checkAge(member.getAge())) ;{
+        errorMessage = "Invalidate Age";
         return false;
     }
+    return true;
 
-    private boolean checkAge(int age) {
-        return false;
+    }
+    @Override
+    public String getErrorMessage(){
+        return errorMessage;
     }
 
-    private boolean checkName(String Name) {
-        return false;
+    private boolean checkAge (int age){
+
+        return age > 0 && age < 120;
+    }
+
+
+    private boolean checkName (String name){
+        return name !=null && !name.trim().isEmpty();
     }
 }
