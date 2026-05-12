@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface Ivalidator {
+public interface IValidator {
 boolean validate (Object obt);
 String getErrorMessage();
 }
