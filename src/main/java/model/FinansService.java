@@ -2,14 +2,13 @@ package model;
 
 import java.util.List;
 
-public class FinansService {
     public class FinansService {
         private static final double JUNIOR_FEE = 800;
         private static final double SENIOR_FEE = 1500;
         private static final double PASSIVE_FEE = 250;
         private static final double SENIOR_DISCOUNT = 0.25;
 
-    }
+
 //Calculates the fee for a single member.
 
     public double calculateFee(Member member) {
