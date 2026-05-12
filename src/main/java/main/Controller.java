@@ -1,5 +1,7 @@
 package main;
 
+import interfaces.ILogger;
+import logger.FileLogger;
 import model.*;
 import exceptions.*;
 import util.*;
