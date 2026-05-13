@@ -16,7 +16,12 @@ public class MainMenu {
         boolean running = true;
 
         while (running) {
-            System.out.println("Velkommen til tennisklubbens hovedmenu. Vælg 1 - 4: ");
+            System.out.println("\n=========================================");
+            System.out.println("     🎾 VELKOMMEN TIL TENNISKLUBBENS 🎾    ");
+            System.out.println("===========================================");
+            System.out.println("            HOVEMENU             ");
+            System.out.println("-------------------------------------------");
+            System.out.println();
             System.out.println("1. Formanden menu");
             System.out.println("2. kasserer menu");
             System.out.println("3. Træner menu");
