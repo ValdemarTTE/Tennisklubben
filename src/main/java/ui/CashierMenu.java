@@ -12,7 +12,10 @@ public class CashierMenu {
         boolean running = true;
 
         while (running) {
-            System.out.println("Velkommen til kasserens menu, 1 - 7");
+            System.out.println("\n=============================================");
+            System.out.println(" 🎾 Velkommen til kasserens menu, 1 - 7 🎾 ");
+            System.out.println("\n=============================================");
+            System.out.println();
             System.out.println("1. Opkrav kontingentbetalning af medlemmer");
             System.out.println("2. Sorter forventede indbetalinger efter beløb");
             System.out.println("4. Vis medlemmer i restance");
