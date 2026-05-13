@@ -41,6 +41,8 @@ public abstract class Member {
 
     public abstract void addDiscipline(Discipline choice);
 
+    public abstract void calculateFee();
+
     public MemberType typeOFMember() {
         if(memberType == MemberType.ACTIVE) {
             return MemberType.ACTIVE;

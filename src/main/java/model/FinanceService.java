@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class FinanceService {
 
-        public int calculateFee(MemberType memberType) {
+        public int calculatePrice(MemberType memberType) {
 
             int price = 0;
 
