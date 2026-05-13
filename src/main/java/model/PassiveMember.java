@@ -1,14 +1,9 @@
 package model;
 
-import java.time.LocalDate;
-
-public class ActiveMember extends Member {
-
-    public ActiveMember(int memberID, String name, int age, double arrearsAmount, MemberType memberType) {
+public class PassiveMember extends Member {
+    public PassiveMember(int memberID, String name, int age,  double arrearsAmount, MemberType memberType) {
         super(memberID, name, age, arrearsAmount, memberType);
     }
-
-
 
     @Override
     public void addDiscipline(Discipline choice) {

@@ -1,12 +1,11 @@
 package model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class CompetitionPlayer extends Member {
+public class Competitive extends Member {
 
-    public CompetitionPlayer(int memberID, String name, int age, boolean isActive, boolean isCompetitive, boolean arrearsAmount, LocalDate createDate, MemberType memberType) {
-        super(memberID, name, age, isActive, isCompetitive, arrearsAmount, createDate, memberType);
+    public Competitive(int memberID, String name, int age, double arrearsAmount, MemberType memberType) {
+        super(memberID, name, age, arrearsAmount, memberType);
     }
 
     private String coachName;
