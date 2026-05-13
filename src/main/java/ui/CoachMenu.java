@@ -12,8 +12,10 @@ public class CoachMenu {
         boolean running = true;
 
         while (running) {
-
-            System.out.println("Velkommen til trænerens menu, vælg 1 - 5");
+            System.out.println("\n================================================");
+            System.out.println(" 🎾 Velkommen til trænerens menu, vælg 1 - 5 🎾 ");
+            System.out.println("\n================================================");
+            System.out.println();
             System.out.println("1. Opret disciplin til medlem");
             System.out.println("2. Register bedste træningsresultat til en disciplin");
             System.out.println("3. Udtag medlem til turnering");
