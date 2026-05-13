@@ -6,5 +6,6 @@ public enum MemberType {
     JUNIOR,
     SENIOR,
     COMPETITIVE,
-    CASUAL
+    CASUAL,
+    OVER_SIXTY
 }

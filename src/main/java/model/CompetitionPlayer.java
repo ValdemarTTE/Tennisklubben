@@ -5,13 +5,11 @@ import java.util.ArrayList;
 
 public class CompetitionPlayer extends Member {
 
-    public CompetitionPlayer(int memberId, String name, int age, boolean isActive, boolean isCompetitive, boolean hasPaid, LocalDate createDate, MemberType memberType) {
-        super(memberId, name, age, isActive, isCompetitive, hasPaid, createDate, memberType);
+    public CompetitionPlayer(int memberID, String name, int age, boolean isActive, boolean isCompetitive, boolean arrearsAmount, LocalDate createDate, MemberType memberType) {
+        super(memberID, name, age, isActive, isCompetitive, arrearsAmount, createDate, memberType);
     }
 
     private String coachName;
-    private String squad;
-    private ArrayList<String> disciplines = new ArrayList<>();
     private ArrayList<TrainingResult> results = new ArrayList<>();
 
     public String getCoach() {
@@ -22,13 +20,15 @@ public class CompetitionPlayer extends Member {
         results.add(result);
     }
 
-    public ArrayList<TrainingResult> getBestResults(CompetitionPlayer player) {
-
+    @Override
+    public void addDiscipline(Discipline choice) {
+        if (choice == Discipline.SINGLE) {
+            addDisciplineToList(choice);
+        } else if (choice == Discipline.DOUBLE) {
+            addDisciplineToList(choice);
+        } else if (choice == Discipline.MIXED_DOUBLE) {
+            addDisciplineToList(choice);
         }
     }
-
-
-
-
 
 }
