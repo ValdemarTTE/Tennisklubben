@@ -16,11 +16,11 @@ public class MainMenu {
         boolean running = true;
 
         while (running) {
-            System.out.println("\n=========================================");
-            System.out.println("     🎾 VELKOMMEN TIL TENNISKLUBBENS 🎾    ");
-            System.out.println("===========================================");
-            System.out.println("            HOVEMENU             ");
-            System.out.println("-------------------------------------------");
+            System.out.println("\n=====================================");
+            System.out.println(" 🎾 VELKOMMEN TIL TENNISKLUBBENS 🎾    ");
+            System.out.println("=======================================");
+            System.out.println("            HOVEMENU                   ");
+            System.out.println("---------------------------------------");
             System.out.println();
             System.out.println("1. Formanden menu");
             System.out.println("2. kasserer menu");
