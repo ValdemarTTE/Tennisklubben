@@ -1,53 +1,55 @@
 package model;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 
 public abstract class Member {
 
-    private int memberId;
+    private int memberID;
     private String name;
     private int age;
     private boolean isActive;
     private boolean isCompetitive;
-    private boolean hasPaid;
-    private LocalDate createDate;
+    private boolean arrearsAmount;
     private MemberType memberType;
+    private ArrayList<Discipline> discipline = new ArrayList<>();
 
-    public Member(int memberId, String name, int age, boolean isActive, boolean isCompetitive, boolean hasPaid, LocalDate createDate, MemberType memberType) {
-        this.memberId = memberId;
+    public Member(int memberID, String name, int age, boolean isActive, boolean isCompetitive, boolean arrearsAmount, LocalDate createDate, MemberType memberType) {
+        this.memberID = memberID;
         this.name = name;
         this.age = age;
         this.isActive = isActive;
         this.isCompetitive = isCompetitive;
-        this.hasPaid = hasPaid;
-        this.createDate = createDate;
+        this.arrearsAmount = arrearsAmount;
         this.memberType = memberType;
+    }
+
+    public int getMemberID() {
+        return memberID;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setHasPaid(boolean hasPaid) {
-        this.hasPaid = hasPaid;
+    public void setArrearsAmount(boolean arrearsAmount) {
+        this.arrearsAmount = arrearsAmount;
     }
 
-    public abstract double getDiscount();
-
-    public double calculateDues(double amount) {
-        return amount - (amount * getDiscount());
+    public void addDisciplineToList(Discipline disciplineType) {
+        discipline.add(disciplineType);
     }
+
+    public abstract void addDiscipline(Discipline choice);
 
     public boolean isJunior() {
-       if(memberType == MemberType.JUNIOR) {
-           return true;
-       } else {
-           return false;
-       }
+       return memberType == MemberType.JUNIOR;
     }
 
-    @Override
-    public int compareTo() {
+    public boolean
 
-    }
+
 }
