@@ -16,7 +16,7 @@ public class CashierMenu {
             System.out.println("1. Opkrav kontingentbetalning af medlemmer");
             System.out.println("2. Sorter forventede indbetalinger efter beløb");
             System.out.println("4. Vis medlemmer i restance");
-            System.out.println("5. Sorter restance medlemmer efter navn");
+            System.out.println("5. Noter medlem der skylder penge");
             System.out.println("6. Sorter restance medlemmer efter beløb");
             System.out.println("7. Afslut program");
 

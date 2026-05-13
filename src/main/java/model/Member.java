@@ -7,18 +7,14 @@ public abstract class Member {
     private int memberID;
     private String name;
     private int age;
-    private boolean isActive;
-    private boolean isCompetitive;
-    private boolean arrearsAmount;
+    private double arrearsAmount;
     private MemberType memberType;
     private ArrayList<Discipline> discipline = new ArrayList<>();
 
-    public Member(int memberID, String name, int age, boolean isActive, boolean isCompetitive, boolean arrearsAmount, LocalDate createDate, MemberType memberType) {
+    public Member(int memberID, String name, int age,double arrearsAmount, MemberType memberType) {
         this.memberID = memberID;
         this.name = name;
         this.age = age;
-        this.isActive = isActive;
-        this.isCompetitive = isCompetitive;
         this.arrearsAmount = arrearsAmount;
         this.memberType = memberType;
     }
@@ -35,7 +31,7 @@ public abstract class Member {
         return age;
     }
 
-    public void setArrearsAmount(boolean arrearsAmount) {
+    public void setArrearsAmount(double arrearsAmount) {
         this.arrearsAmount = arrearsAmount;
     }
 
@@ -45,11 +41,22 @@ public abstract class Member {
 
     public abstract void addDiscipline(Discipline choice);
 
-    public boolean isJunior() {
-       return memberType == MemberType.JUNIOR;
+    public MemberType typeOFMember() {
+        if(memberType == MemberType.ACTIVE) {
+            return MemberType.ACTIVE;
+        } else if (memberType == MemberType.PASSIVE) {
+            return MemberType.PASSIVE;
+        } else if (memberType == MemberType.JUNIOR) {
+            return MemberType.JUNIOR;
+        } else if (memberType == MemberType.SENIOR) {
+            return MemberType.SENIOR;
+        } else if (memberType == MemberType.COMPETITIVE) {
+            return MemberType.COMPETITIVE;
+        } else if (memberType == MemberType.OVER_SIXTY) {
+            return MemberType.OVER_SIXTY;
+        }
+        return memberType;
     }
-
-    public boolean
 
 
 }
