@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 public class FinanceService {
 
         public int calculateFee(MemberType memberType) {
@@ -18,8 +20,6 @@ public class FinanceService {
 
             return price;
         }
-
-
 
 
 }
