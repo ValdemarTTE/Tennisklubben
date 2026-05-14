@@ -4,6 +4,7 @@ import util.ConsoleColors;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+
 public class ConsoleLogger implements ILogger {
     // Giver logger et tidsstempel
     private final DateTimeFormatter formatter =
