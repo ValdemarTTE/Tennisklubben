@@ -1,5 +1,7 @@
 package validators;
 
+import interfaces.IValidator;
+
 import java.io.File;
 
 public class FileValidator implements IValidator<File> {
@@ -37,4 +39,4 @@ public class FileValidator implements IValidator<File> {
     }
 }
 
-}
+

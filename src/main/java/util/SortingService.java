@@ -33,7 +33,7 @@ public class SortingService {
         Collections.sort(members, new Comparator<Member>() {
             @Override
             public int compare(Member o1, Member o2) {
-                return (int) (o1.GetarrearsAmount() - (o2.GetarrearsAmount);
+                return (int) (o1.getArrearsAmount() - o2.getArrearsAmount());
             }
         });
     }
