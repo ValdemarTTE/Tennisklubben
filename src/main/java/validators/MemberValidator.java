@@ -2,7 +2,7 @@ package validators;
 
 import model.Member;
 
-public class MemberValidator implements IValidator<Member>  {
+public class MemberValidator implements IValidator<Member> {
     private String errorMessage;
 
     @Override
