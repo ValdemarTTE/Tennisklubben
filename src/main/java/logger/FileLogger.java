@@ -6,9 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class FileLogger implements ILogger {
 
+    private static final String LOG_FILE_PATH = "log.csv";
     private String LOG_FILE = LOG_FILE_PATH;
 
     public String getLOG_FILE() {
@@ -48,8 +50,8 @@ public class FileLogger implements ILogger {
     }
 
     @Override
-    public LocalDateTime timestampFormat() {
-        return LocalDateTime.now();
+    public String timestampFormat() {
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
 
     }
 

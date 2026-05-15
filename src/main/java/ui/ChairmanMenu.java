@@ -13,7 +13,10 @@ public class ChairmanMenu {
 
         while (running) {
 
-            System.out.println("Velkommen til formandens menu, vælg 1 - 5");
+            System.out.println("\n================================================");
+            System.out.println(" 🎾 Velkommen til formandens menu, vælg 1 - 5 🎾 ");
+            System.out.println("\n================================================");
+            System.out.println();
             System.out.println("1. Lav nyt medlem");
             System.out.println("2. Se medlemsliste");
             System.out.println("3. Sorter medlemsliste efter navn");

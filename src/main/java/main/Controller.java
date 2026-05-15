@@ -5,6 +5,7 @@ import logger.FileLogger;
 import model.*;
 import exceptions.*;
 import util.*;
+import validators.MemberValidator;
 
 import java.util.List;
 

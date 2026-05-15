@@ -1,24 +1,27 @@
 package validators;
 
+import interfaces.IValidator;
 import model.Member;
 
-public class MemberValidator implements IValidator<Member>  {
+public class MemberValidator implements IValidator<Member> {
     private String errorMessage;
 
     @Override
-    public boolean validate(Member member ) {
-        if (!checkName(member.getName()));
-        {
-            errorMessage = "Invalidate Name";
+    public boolean validate(Member member) {
+
+        if (!checkName(member.getName())) {
+            errorMessage = "Invalid Name";
             return false;
         }
-        if (!checkAge(member.getAge())) ;{
-        errorMessage = "Invalidate Age";
-        return false;
-    }
-    return true;
 
+        if (!checkAge(member.getAge())) {
+            errorMessage = "Invalid Age";
+            return false;
+        }
+
+        return true;
     }
+
     @Override
     public String getErrorMessage(){
         return errorMessage;
