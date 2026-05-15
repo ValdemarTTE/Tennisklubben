@@ -26,7 +26,6 @@ public abstract class Member {
     public String getName() {
         return name;
     }
-
     public int getAge() {
         return age;
     }
@@ -34,6 +33,8 @@ public abstract class Member {
     public void setArrearsAmount(double arrearsAmount) {
         this.arrearsAmount = arrearsAmount;
     }
+
+    public double getArrearsAmount(){return arrearsAmount;};
 
     public void addDisciplineToList(Discipline disciplineType) {
         discipline.add(disciplineType);
