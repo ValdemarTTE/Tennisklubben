@@ -1,10 +1,20 @@
 package ui;
 
+import file.CSVHandler;
+import main.TennisSystemChairman;
+
 import java.util.Scanner;
 
 public class ChairmanMenu {
 
-    private Scanner scanner;
+    private Scanner sc;
+
+    public ChairmanMenu(Scanner sc) {
+        this.sc = sc;
+    }
+
+    TennisSystemChairman chairman = new TennisSystemChairman();
+    CSVHandler file = new CSVHandler();
 
     // Viser formandens menu
     public void startChairmanMenu() {
@@ -24,13 +34,15 @@ public class ChairmanMenu {
             System.out.println("5. Afslut program");
 
 
-            int choice = scanner.nextInt();
+            int choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
-
+                    chairman.createMember(sc);
+                    break;
                 case 2:
 
+                    break;
                 case 3:
 
                 case 4:

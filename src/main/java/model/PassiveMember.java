@@ -1,8 +1,8 @@
 package model;
 
 public class PassiveMember extends Member {
-    public PassiveMember(int memberID, String name, int age,  double arrearsAmount, MemberType memberType) {
-        super(memberID, name, age, arrearsAmount, memberType);
+    public PassiveMember(String name, int memberID, int age, MemberType memberType) {
+        super(name, memberID, age, memberType);
     }
 
     @Override

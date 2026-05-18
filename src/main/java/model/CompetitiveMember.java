@@ -2,10 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
-public class Competitive extends Member {
+public class CompetitiveMember extends Member {
 
-    public Competitive(int memberID, String name, int age, double arrearsAmount, MemberType memberType) {
-        super(memberID, name, age, arrearsAmount, memberType);
+    public CompetitiveMember(String name, int memberID, int age, MemberType memberType) {
+        super(name, memberID, age, memberType);
     }
 
     private String coachName;
