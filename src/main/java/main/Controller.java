@@ -3,23 +3,25 @@ package main;
 import interfaces.ILogger;
 import logger.FileLogger;
 import model.*;
-import exceptions.*;
+import interfaces.*;
+import service.MemberFactoryImpl;
 import util.*;
 import validators.MemberValidator;
+import file.*;
 
 import java.util.List;
 
 public class Controller {
     //Referencer til andre lag (Services og Data)
-    private MemberManager memberManager;
+    private MemberFactoryImpl memberManager;
     private FinanceService financeService;
-    private IStorage storage;
+    private CSVHandler storage;
     private ILogger logger;
     private IValidator validator;
 
-    public Controller() {
+    public Controller() throws SmashException.FileReadException {
         // Initialisering af systemets dele
-        this.memberManager = new MemberManager();
+        this.memberManager = new MemberFactoryImpl();
         this.financeService = new FinanceService();
         this.storage = new CSVHandler();
         this.logger = new FileLogger();
@@ -28,7 +30,7 @@ public class Controller {
         // indlæs data automatisk ved opstart
         try {
             loadAllData();
-        } catch (SmashException e) {
+        } catch (SmashException.FileReadException(new SmashException.FileReadException)) {
             System.out.println("Fejl ved opstart: " + e.getMessage());
         }
     }
@@ -39,7 +41,7 @@ public class Controller {
         validator.validate(name, age);
 
         // Opretter medlem via Factory (hører under MemberManager eller som selvstændig service)
-        Member newMember = MemberFactory.create(name, age, isActive, isCompetitive);
+        Member newMember = MemberFactoryImpl.createMember(name, age, isActive, isCompetitive);
 
         // Tilføjer til listen og gemmer til fil
         memberManager.add(newMember);
@@ -67,9 +69,10 @@ public class Controller {
         memberManager.setAll(loadedMembers);
     }
 
-public void runPerformanceTest() {
-    // Denne methode kalder CSVHandler for at CPU-tid kan måles
-    if (storage instanceof CSVHandler) {
-        ((CSVHandler) storage).measurePerformance();
+    public void runPerformanceTest() {
+        // Denne methode kalder CSVHandler for at CPU-tid kan måles
+        if (storage instanceof CSVHandler) {
+            ((CSVHandler) storage).measurePerformance();
+        }
     }
 }
