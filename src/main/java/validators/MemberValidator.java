@@ -3,11 +3,13 @@ package validators;
 import interfaces.IValidator;
 import model.Member;
 
+import java.io.File;
+
 public class MemberValidator implements IValidator<Member> {
     private String errorMessage;
 
     @Override
-    public boolean validate(Member member) {
+    public boolean validate(File file, Member member) {
 
         if (!checkName(member.getName())) {
             errorMessage = "Invalid Name";
