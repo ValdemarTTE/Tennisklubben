@@ -1,14 +1,23 @@
 package model;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class ActiveMember extends Member {
+public class CompetitiveMember extends Member {
 
-    public ActiveMember(String name, int memberID, int age, MemberType memberType) {
+    public CompetitiveMember(String name, int memberID, int age, MemberType memberType) {
         super(name, memberID, age, memberType);
     }
 
+    private String coachName;
+    private ArrayList<TrainingResult> results = new ArrayList<>();
 
+    public String getCoach() {
+        return coachName;
+    }
+
+    public void addResult(TrainingResult result) {
+        results.add(result);
+    }
 
     @Override
     public void addDiscipline(Discipline choice) {
@@ -20,7 +29,5 @@ public class ActiveMember extends Member {
             addDisciplineToList(choice);
         }
     }
-
-
 
 }
