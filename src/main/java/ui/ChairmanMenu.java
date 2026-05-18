@@ -41,7 +41,7 @@ public class ChairmanMenu {
                     chairman.createMember(sc);
                     break;
                 case 2:
-
+                    System.out.println(file.loadMember());
                     break;
                 case 3:
 
