@@ -27,7 +27,7 @@ public class MainMenu {
             System.out.println(GREEN + "1. Formanden menu");
             System.out.println(BLUE + "2. kasserer menu");
             System.out.println(CYAN + "3. Træner menu");
-            System.out.println("4. Afslut program");
+            System.out.println(RESET +"4. Afslut program");
 
 
             int choice = sc.nextInt();
