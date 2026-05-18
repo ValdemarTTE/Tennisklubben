@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    Scanner scanner = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     ChairmanMenu menuA = new ChairmanMenu();
     CashierMenu menuB = new CashierMenu();
@@ -28,7 +28,7 @@ public class MainMenu {
             System.out.println("4. Afslut program");
 
 
-            int choice = scanner.nextInt();
+            int choice = sc.nextInt();
 
             switch (choice) {
                 case 1:

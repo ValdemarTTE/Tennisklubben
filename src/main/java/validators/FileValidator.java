@@ -1,14 +1,15 @@
 package validators;
 
 import interfaces.IValidator;
+import model.Member;
 
 import java.io.File;
 
-public class FileValidator implements IValidator<File> {
+public class FileValidator implements IValidator {
     private String errorMessage;
 
     @Override
-    public boolean validate(File file) {
+    public boolean validate(File file, Member member) {
 
         if (file == null) {
             errorMessage = "File cannot be null";

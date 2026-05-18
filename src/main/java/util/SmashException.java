@@ -13,11 +13,31 @@ public class SmashException {
         } else if (e instanceof MemberNotFoundException) {
             System.out.println("");
             System.out.println(e.getMessage());
+        } else if (e instanceof FileWriteException) {
+            System.out.println("");
+            System.out.println(e.getMessage());
+        } else if(e instanceof FileReadException) {
+            System.out.println("");
+            System.out.println(e.getMessage());
         } else {
             System.out.println("Unknown error ");
             System.out.println(e.getMessage());
         }
 
+    }
+
+    public static class FileWriteException extends Exception {
+
+        public FileWriteException(String message) {
+            super(message);
+        }
+    }
+
+    public static class FileReadException extends Exception {
+
+        public FileReadException(String message) {
+            super(message);
+        }
     }
 
     public static class FileStorageException extends Exception {
