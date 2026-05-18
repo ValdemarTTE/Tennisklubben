@@ -4,7 +4,8 @@ package service;
 import interfaces.IMemberFactory;
 import model.Member;
 import model.ActiveMember;
-import model.CompetitionPlayer;
+import model.CompetitiveMember;
+import model.MemberType;
 
 public class MemberFactoryImpl implements IMemberFactory {
 
@@ -12,12 +13,12 @@ public class MemberFactoryImpl implements IMemberFactory {
     public Member createMember(int id, String name, int age, boolean isActive, boolean isCompetitive) {
 
         if (!isActive) {
-            return new PassiveMember(id, name,age);
+            return new Member(id, name, age, arrearsAmount, MemberType);
         }
         if  (isCompetitive) {
-            return new CompetitionPlayer(id, name, age);
+            return new CompetitiveMember(id, name, age, isActive, isCompetitive, arrearsAmount, LocalDate, MemberType);
         } else {
-            return new ActiveMember(id, name, age);
+            return new ActiveMember(id, name, age, isActive, isCompetitive, arrearsAmount, MemberType);
         }
     }
 }
