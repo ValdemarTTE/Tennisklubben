@@ -4,7 +4,6 @@ import interfaces.ILogger;
 import logger.FileLogger;
 import model.*;
 import interfaces.*;
-import service.MemberFactoryImpl;
 import util.*;
 import validators.MemberValidator;
 import file.*;
@@ -36,17 +35,7 @@ public class Controller {
     }
 
 
-    public void addMember(String name, int age, boolean isActive, boolean isCompetitive) throws SmashException {
-// validere data via interface
-        validator.validate(name, age);
 
-        // Opretter medlem via Factory (hører under MemberManager eller som selvstændig service)
-        Member newMember = MemberFactoryImpl.createMember(name, age, isActive, isCompetitive);
-
-        // Tilføjer til listen og gemmer til fil
-        memberManager.add(newMember);
-        storage.saveMembers(memberManager.getAll());
-    }
 
     public List<Member> getArrearsList() {
         // Henter Listen over folk i restance fra FinanceService

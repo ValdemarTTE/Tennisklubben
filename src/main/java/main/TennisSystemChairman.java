@@ -13,7 +13,6 @@ public class TennisSystemChairman {
     private Random random = new Random();
     private CSVHandler filehandler = new CSVHandler();
     public ArrayList<Member> memberList = new ArrayList<>();
-    public ArrayList<Member> savedMembers = filehandler.loadMember();
 
 
 
@@ -47,7 +46,7 @@ public class TennisSystemChairman {
         }
 
         memberList.add(newMember);
-        filehandler.saveMember(newMember);
+        filehandler.saveMember(memberList);
     }
 
 

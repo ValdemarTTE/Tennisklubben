@@ -1,16 +1,72 @@
 package file;
 
-import interfaces.IMemberFactory;
 import model.*;
 import util.SmashException;
-import service.MemberFactoryImpl;
+
 import java.io.*;
 import java.util.*;
 
 public class CSVHandler {
-    private static final String MEMBER_FILE = "src/main/resources/members.csv";
+    private static final String MEMBER_FILE = "members.csv";
     private static final String PAYMENT_FILE = "payments.csv";
     private static final String TRAINING_FILE = "training.csv";
+
+
+    public void saveMember(ArrayList<Member> member) {
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBER_FILE, true))) {
+
+            for(Member m : member) {
+                writer.write(m.getName() + "," +
+                        m.getMemberID() + "," +
+                        m.getAge() + "," +
+                        m.getMemberType());
+
+                writer.newLine();
+
+            }
+        } catch(IOException e) {
+            SmashException.handle(new SmashException.FileWriteException("Kunne ikke skrive medlemsliste" + MEMBER_FILE));
+        }
+
+
+    }
+
+    public ArrayList<Member> loadMember() {
+
+        ArrayList<Member> members = new ArrayList<>();
+
+        try(BufferedReader reader = new BufferedReader(new FileReader(MEMBER_FILE))) {
+
+            String line;
+
+            while((line = reader.readLine()) != null) {
+
+                String[] parts = line.split(",");
+
+                String name = parts[0];
+                int memberID = Integer.parseInt(parts[1]);
+                int age = Integer.parseInt(parts[2]);
+                MemberType memberType = MemberType.valueOf(parts[3]);
+
+                switch(memberType) {
+                    case ACTIVE:
+                        members.add(new ActiveMember(name, memberID, age, memberType));
+                        break;
+                    case PASSIVE:
+                        members.add(new PassiveMember(name, memberID, age, memberType));
+                        break;
+                    case COMPETITIVE:
+                        members.add(new CompetitiveMember(name, memberID, age, memberType));
+                        break;
+                }
+
+            }
+        } catch (IOException e) {
+            SmashException.handle(new SmashException.FileWriteException("Kunne ikke skrive medlemsliste" + MEMBER_FILE));
+        }
+        return members;
+    }
 
 
     public ArrayList<Member> loadDebt() {
@@ -70,46 +126,6 @@ public class CSVHandler {
 
     }
 
-    public void saveMember(Member m) {
-
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBER_FILE, true))) {
-
-                writer.write(m.getName() + "," +
-                        m.getMemberID() + "," +
-                        m.getAge() + "," +
-                        m.getMemberType());
-
-                writer.newLine();
-
-        } catch(IOException e) {
-            SmashException.handle(new SmashException.FileWriteException("Kunne ikke skrive medlemsliste" + MEMBER_FILE));
-        }
-
-
-    }
-
-    public ArrayList<Member> loadMember(Member m) {
-
-
-        try(BufferedReader reader = new BufferedReader(new FileReader(MEMBER_FILE))) {
-
-            String line;
-
-            while((line = reader.readLine()) != null) {
-
-                String[] parts = line.split(",");
-
-                String name = parts[0];
-                int memberID = Integer.parseInt(parts[1]);
-                int age = Integer.parseInt(parts[2]);
-                MemberType memberType = MemberType.valueOf(parts[3]);
-
-            }
-        } catch (IOException e) {
-            SmashException.handle(new SmashException.FileWriteException("Kunne ikke skrive medlemsliste" + MEMBER_FILE));
-        }
-        return
-    }
 
         public void measurePerformance () {
             System.out.println("Starter CPU-tidsmåling...");
