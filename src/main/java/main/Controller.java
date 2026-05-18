@@ -67,7 +67,7 @@ public void loadAllData() throws SmashException {
 }
 
 public void runPerformanceTest() {
-    // Denne methode kalder jeres CSVHandler for at måle CPU-tid
+    // Denne methode kalder CSVHandler for at CPU-tid kan måles
     if (storage instanceof CSVHandler) {
         ((CSVHandler) storage).measurePerformance();
     }
