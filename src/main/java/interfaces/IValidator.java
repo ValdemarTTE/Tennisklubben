@@ -8,4 +8,6 @@ import java.io.File;
 public interface IValidator {
 
     boolean validate(File file, Member member);
+
+    String getErrorMessage();
 }
