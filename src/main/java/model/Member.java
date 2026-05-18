@@ -4,44 +4,52 @@ import java.util.ArrayList;
 
 public abstract class Member {
 
-    private int memberID;
     private String name;
+    private int memberID;
     private int age;
-    private double arrearsAmount;
     private MemberType memberType;
+    private ArrayList<Member> debts;
     private ArrayList<Discipline> discipline = new ArrayList<>();
+    public ArrayList<Member> memberList = new ArrayList<>();
 
-    public Member(int memberID, String name, int age,double arrearsAmount, MemberType memberType) {
-        this.memberID = memberID;
+
+    public Member(String name, int memberID, int age, MemberType memberType) {
         this.name = name;
+        this.memberID = memberID;
         this.age = age;
-        this.arrearsAmount = arrearsAmount;
         this.memberType = memberType;
-    }
-
-    public int getMemberID() {
-        return memberID;
     }
 
     public String getName() {
         return name;
     }
 
+    public int getMemberID() {
+        return memberID;
+    }
+
     public int getAge() {
         return age;
     }
 
-    public void setArrearsAmount(double arrearsAmount) {
-        this.arrearsAmount = arrearsAmount;
+    public MemberType getMemberType() {
+        return memberType;
     }
+
+    public ArrayList<Member> getMemberList() {
+        return memberList;
+    }
+
+    public void addMember(Member member) {
+        memberList.add(member);
+    }
+
 
     public void addDisciplineToList(Discipline disciplineType) {
         discipline.add(disciplineType);
     }
 
-    public abstract void addDiscipline(Discipline choice);
 
-    public abstract void calculateFee();
 
     public MemberType typeOFMember() {
         if(memberType == MemberType.ACTIVE) {

@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class ActiveMember extends Member {
 
-    public ActiveMember(int memberID, String name, int age, double arrearsAmount, MemberType memberType) {
-        super(memberID, name, age, arrearsAmount, memberType);
+    public ActiveMember(String name, int memberID, int age, MemberType memberType) {
+        super(name, memberID, age, memberType);
     }
 
 

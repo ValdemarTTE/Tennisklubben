@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public class TrainingResult {
+public abstract class TrainingResult {
 
     private String discipline ;
     private double resultValue;
@@ -21,6 +21,8 @@ public class TrainingResult {
     public double getResultValue() {
         return resultValue;
     }
+
+    public abstract void addDiscipline(Discipline choice);
 
 
     @Override

@@ -1,10 +1,22 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class FinanceService {
 
-        public int calculatePrice(MemberType memberType) {
+
+    private double arrearsAmount;
+
+    public ArrayList<Member> getDebts() {
+        return debts;
+    }
+
+    public double getArrearsAmount() {
+        return arrearsAmount;
+    }
+
+    public int calculatePrice(MemberType memberType) {
 
             int price = 0;
 

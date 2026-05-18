@@ -1,16 +1,60 @@
 package file;
 
+import interfaces.IMemberFactory;
 import model.*;
-import exceptions.SmashException;
+import util.SmashException;
 import service.MemberFactoryImpl;
 import java.io.*;
 import java.util.*;
 
-public class CSVHandler implements IStorage {
-    private final String MEMBER_FILE = "src/main/resources/members.csv";
+public class CSVHandler {
+    private static final String MEMBER_FILE = "src/main/resources/members.csv";
+    private static final String PAYMENT_FILE = "payments.csv";
+    private static final String TRAINING_FILE = "training.csv";
+
+
+    public ArrayList<Member> loadDebt() {
+        ArrayList<Member> debts = new ArrayList<>();
+
+        try(BufferedReader reader = new BufferedReader(new FileReader(PAYMENT_FILE))) {
+
+            String line;
+
+            while((line = reader.readLine()) != null) {
+
+                String[] parts = line.split(",");
+
+                int memberID = Integer.parseInt(parts[0]);
+                String name = (parts[1]);
+                int age = Integer.parseInt(parts[2]);
+                double arrearsAmount = Double.parseDouble(parts[3]);
+                MemberType memberType = MemberType.valueOf(parts[4]);
+
+                debts.add(new Member(memberID, name, age, arrearsAmount,memberType));
+            }
+
+        } catch(IOException e) {
+            SmashException.handle(new SmashException.FileReadException("Could not read file " + PAYMENT_FILE));
+        }
+        return debts;
+    }
+
+    public void saveDebt(Member member) {
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(PAYMENT_FILE, true))) {
+
+            for(Member s : member.getDebts()) {
+                writer.write(member.getArrearsAmount() + ",");
+                writer.newLine();
+            }
+
+        } catch(IOException e) {
+            SmashException.handle(new SmashException.FileWriteException("Could not write file " + PAYMENT_FILE));
+        }
+    }
 
     @Override
-    public List<Member> loadmembers() throws SmashException {
+    public List<Member> loadmembers() {
         List<Member> members = new ArrayList<>();
         // Her bruger vi standardindlæsning (buffered som default)
         try (BufferedReader br = new BufferedReader(new FileReader(MEMBER_FILE))) {
@@ -20,24 +64,53 @@ public class CSVHandler implements IStorage {
             members.add(member);
             }
         } catch (IOException e) {
-            throw new SmashException("Kunne ikke læse medlemsfilen" + MEMBER_FILE);
+            SmashException.handle(new SmashException.FileReadException("Kunne ikke læse medlemsfilen" + MEMBER_FILE));
         }
         return members;
 
     }
 
-    private Member parseMember(String line) {
-        String[] data = line.split(",");
+    public void saveMember(Member m) {
 
-        int id = Integer.parseInt(data[0]);
-        String name = data[1];
-        int age = Integer.parseInt(data[2]);
-        boolean isActive = Boolean.parseBoolean(data[3]);
-        boolean isCompetitive = Boolean.parseBoolean(data[4]);
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBER_FILE, true))) {
 
-        MemberFactoryImpl factory = new MemberFactoryImpl();
-        return factory.createMember(id, name, age,isActive, isCompetitive);
+                writer.write(m.getName() + "," +
+                        m.getMemberID() + "," +
+                        m.getAge() + "," +
+                        m.getMemberType());
+
+                writer.newLine();
+
+        } catch(IOException e) {
+            SmashException.handle(new SmashException.FileWriteException("Kunne ikke skrive medlemsliste" + MEMBER_FILE));
+        }
+
+
     }
+
+    public ArrayList<Member> loadMember(Member m) {
+
+
+        try(BufferedReader reader = new BufferedReader(new FileReader(MEMBER_FILE))) {
+
+            String line;
+
+            while((line = reader.readLine()) != null) {
+
+                String[] parts = line.split(",");
+
+                String name = parts[0];
+                int memberID = Integer.parseInt(parts[1]);
+                int age = Integer.parseInt(parts[2]);
+                MemberType memberType = MemberType.valueOf(parts[3]);
+
+            }
+        } catch (IOException e) {
+            SmashException.handle(new SmashException.FileWriteException("Kunne ikke skrive medlemsliste" + MEMBER_FILE));
+        }
+        return
+    }
+
         public void measurePerformance () {
             System.out.println("Starter CPU-tidsmåling...");
 
