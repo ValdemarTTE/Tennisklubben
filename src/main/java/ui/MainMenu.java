@@ -2,6 +2,8 @@ package ui;
 
 import java.util.Scanner;
 
+import static util.ConsoleColors.*;
+
 public class MainMenu {
 
     Scanner sc = new Scanner(System.in);
@@ -22,10 +24,10 @@ public class MainMenu {
             System.out.println("            HOVEMENU                   ");
             System.out.println("---------------------------------------");
             System.out.println();
-            System.out.println("1. Formanden menu");
-            System.out.println("2. kasserer menu");
-            System.out.println("3. Træner menu");
-            System.out.println("4. Afslut program");
+            System.out.println(GREEN + "1. Formanden menu");
+            System.out.println(BLUE + "2. kasserer menu");
+            System.out.println(CYAN + "3. Træner menu");
+            System.out.println(RESET +"4. Afslut program");
 
 
             int choice = sc.nextInt();
