@@ -1,6 +1,6 @@
 package util;
 
-import model.CompetitionPlayer;
+import model.CompetitiveMember;
 import model.Member;
 import model.TrainingResult;
 import java.util.Collections;
@@ -38,10 +38,10 @@ public class SortingService {
         });
     }
 
-    public List<CompetitionPlayer> getBestResults(List<CompetitionPlayer> players, String discipline ){
-        Collections.sort(players, new Comparator<CompetitionPlayer>() {
+    public List<CompetitiveMember> getBestResults(List<CompetitiveMember> players, String discipline ){
+        Collections.sort(players, new Comparator<CompetitiveMember>() {
             @Override
-            public int compare(CompetitionPlayer o1, CompetitionPlayer o2) {
+            public int compare(CompetitiveMember o1, CompetitiveMember o2) {
                 return (int) (o2.getBestResults(discipline) - o1.getBestResults(discipline));
             }
         });
