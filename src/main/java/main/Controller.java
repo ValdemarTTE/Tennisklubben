@@ -30,7 +30,7 @@ public class Controller {
         // indlæs data automatisk ved opstart
         try {
             loadAllData();
-        } catch (SmashException.FileReadException(new SmashException.FileReadException)) {
+        } catch (SmashException.FileReadException e){
             System.out.println("Fejl ved opstart: " + e.getMessage());
         }
     }
