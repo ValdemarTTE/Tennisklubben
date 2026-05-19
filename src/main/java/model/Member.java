@@ -14,9 +14,6 @@ public abstract class Member {
     public ArrayList<Member> memberList = new ArrayList<>();
     public LocalDate date;
 
-
-
-
     public Member(String name, int memberID, int age, MemberType memberType) {
         this.name = name;
         this.memberID = memberID;
@@ -24,6 +21,19 @@ public abstract class Member {
         this.memberType = memberType;
         this.date = LocalDate.now();
     }
+
+    public Member(String name, int memberID, int age, MemberType memberType, LocalDate date) {
+        this.name = name;
+        this.memberID = memberID;
+        this.age = age;
+        this.memberType = memberType;
+        this.date = date;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
 
     public String getName() {
         return name;
