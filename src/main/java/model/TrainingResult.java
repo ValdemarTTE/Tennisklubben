@@ -29,4 +29,8 @@ public abstract class TrainingResult {
     public String toString() {
         return discipline + " " + resultValue + " " + isTournament;
     }
+
+
+
+
 }
