@@ -4,6 +4,7 @@ import model.*;
 import util.SmashException;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.*;
 
 public class CSVHandler {
@@ -15,14 +16,14 @@ public class CSVHandler {
 
     public void saveMember(ArrayList<Member> memberList) {
 
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBER_FILE, true))) {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBER_FILE, false))) {
 
             for(Member m : memberList) {
                 writer.write(m.getName() + "," +
                         m.getMemberID() + "," +
                         m.getAge() + "," +
-                        m.getMemberType());
-
+                        m.getMemberType() + "," +
+                        m.getDate());
                 writer.newLine();
             }
         } catch(IOException e) {
@@ -48,16 +49,18 @@ public class CSVHandler {
                 int memberID = Integer.parseInt(parts[1]);
                 int age = Integer.parseInt(parts[2]);
                 MemberType memberType = MemberType.valueOf(parts[3]);
+                String dateString = parts[4];
+                LocalDate date = LocalDate.parse(dateString);
 
                 switch(memberType) {
                     case ACTIVE:
-                        memberList.add(new ActiveMember(name, memberID, age, memberType));
+                        memberList.add(new ActiveMember(name, memberID, age, memberType, date));
                         break;
                     case PASSIVE:
-                        memberList.add(new PassiveMember(name, memberID, age, memberType));
+                        memberList.add(new PassiveMember(name, memberID, age, memberType, date));
                         break;
                     case COMPETITIVE:
-                        memberList.add(new CompetitiveMember(name, memberID, age, memberType));
+                        memberList.add(new CompetitiveMember(name, memberID, age, memberType, date));
                         break;
                 }
 

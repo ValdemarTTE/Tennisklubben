@@ -8,6 +8,10 @@ public class ActiveMember extends Member {
         super(name, memberID, age, memberType);
     }
 
+    public ActiveMember(String name, int memberID, int age, MemberType memberType, LocalDate date) {
+        super(name, memberID, age, memberType, date);
+    }
+
 
 
     @Override
