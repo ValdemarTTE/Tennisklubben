@@ -20,7 +20,4 @@ public class ActiveMember extends Member {
             addDisciplineToList(choice);
         }
     }
-
-
-
 }

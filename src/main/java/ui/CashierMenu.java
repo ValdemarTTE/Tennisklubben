@@ -1,10 +1,22 @@
 package ui;
 
+import file.CSVHandler;
+import main.TennisSystemCashier;
+import main.TennisSystemChairman;
+import util.SortingService;
+
 import java.util.Scanner;
 
 public class CashierMenu {
+    private Scanner sc;
 
-    private Scanner scanner;
+    public CashierMenu (Scanner sc) {
+        this.sc = sc;
+    }
+
+    TennisSystemCashier cashier = new TennisSystemCashier();
+    CSVHandler file = new CSVHandler();
+    SortingService sortingService = new SortingService();
 
     // Viser kasserermenu
     public void startCashierMenu() {
@@ -22,12 +34,12 @@ public class CashierMenu {
             System.out.println("4. Afslut program");
 
 
-            int choice = scanner.nextInt();
+            int choice = sc.nextInt();
 
             switch (choice) {
-                case 1:
+                case 1: cashier.expectPayment();
 
-                case 2:
+                case 2:cashier.sortArrearsAmount();
 
                 case 3:
 

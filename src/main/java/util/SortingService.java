@@ -29,7 +29,7 @@ public class SortingService {
         });
     }
 
-    public void sortbyArrearsAmount(List<Member> members){
+    public void sortByArrearsAmount(List<Member> members){
         Collections.sort(members, new Comparator<Member>() {
             @Override
             public int compare(Member o1, Member o2) {

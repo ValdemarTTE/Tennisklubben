@@ -12,7 +12,6 @@ import java.util.List;
 
 public class Controller {
     //Referencer til andre lag (Services og Data)
-    private MemberFactoryImpl memberManager;
     private FinanceService financeService;
     private CSVHandler storage;
     private ILogger logger;
@@ -20,7 +19,6 @@ public class Controller {
 
     public Controller() throws SmashException.FileReadException {
         // Initialisering af systemets dele
-        this.memberManager = new MemberFactoryImpl();
         this.financeService = new FinanceService();
         this.storage = new CSVHandler();
         this.logger = new FileLogger();
@@ -33,9 +31,6 @@ public class Controller {
             System.out.println("Fejl ved opstart: " + e.getMessage());
         }
     }
-
-
-
 
     public List<Member> getArrearsList() {
         // Henter Listen over folk i restance fra FinanceService
