@@ -41,7 +41,7 @@ public class TennisSystemChairman {
                 break;
             } else if(memberTypeString.equalsIgnoreCase("konkurrence")) {
 
-                System.out.println("Discipline: (single, double, mixed double");
+                System.out.println("Discipline: (SINGLE, DOUBLE, MIXED DOUBLE");
                 String input = sc.nextLine();
                 Discipline discipline = Discipline.valueOf(input);
 

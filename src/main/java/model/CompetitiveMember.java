@@ -10,11 +10,16 @@ public class CompetitiveMember extends Member {
         this.discipline = discipline;
     }
 
-    public CompetitiveMember(String name, int memberID, int age, MemberType memberType, LocalDate date) {
+    public CompetitiveMember(String name, int memberID, int age, MemberType memberType, Discipline discipline, LocalDate date) {
         super(name, memberID, age, memberType, date);
+        this.discipline = discipline;
     }
 
     private Discipline discipline;
+
+    public Discipline getDiscipline() {
+        return discipline;
+    }
     private ArrayList<TrainingResult> results = new ArrayList<>();
 
 

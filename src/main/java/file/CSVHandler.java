@@ -14,6 +14,7 @@ public class CSVHandler {
 
 
 
+
     public void saveMember(ArrayList<Member> memberList) {
 
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(MEMBER_FILE, false))) {
@@ -23,7 +24,9 @@ public class CSVHandler {
                         m.getMemberID() + "," +
                         m.getAge() + "," +
                         m.getMemberType() + "," +
+                        (m instanceof CompetitiveMember ? ((CompetitiveMember) m).getDiscipline() : "") + " " +
                         m.getDate());
+
                 writer.newLine();
             }
         } catch(IOException e) {
@@ -49,7 +52,8 @@ public class CSVHandler {
                 int memberID = Integer.parseInt(parts[1]);
                 int age = Integer.parseInt(parts[2]);
                 MemberType memberType = MemberType.valueOf(parts[3]);
-                String dateString = parts[4];
+                Discipline discipline = Discipline.valueOf(parts[4])
+                String dateString = parts[5];
                 LocalDate date = LocalDate.parse(dateString);
 
                 switch(memberType) {
@@ -60,7 +64,7 @@ public class CSVHandler {
                         memberList.add(new PassiveMember(name, memberID, age, memberType, date));
                         break;
                     case COMPETITIVE:
-                        memberList.add(new CompetitiveMember(name, memberID, age, memberType, date));
+                        memberList.add(new CompetitiveMember(name, memberID, age, memberType, discipline, date));
                         break;
                 }
 
