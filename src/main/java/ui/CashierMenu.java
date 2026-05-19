@@ -18,8 +18,8 @@ public class CashierMenu {
             System.out.println();
             System.out.println("1. Vis medlemmer og deres betalninger ");
             System.out.println("2. Vis forventet indbetalninger efter beløb");
-            System.out.println("4. Vis medlemmer i restance");
-            System.out.println("5. Put medlem i restance");
+            System.out.println("4. Put medlem i restance");
+            System.out.println("5. Vis medlemmer i restance");
             System.out.println("6. Sorter restance medlemmer efter beløb");
             System.out.println("7. Afslut program");
 
