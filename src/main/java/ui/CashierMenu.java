@@ -16,12 +16,10 @@ public class CashierMenu {
             System.out.println(" 🎾 Velkommen til kasserens menu, 1 - 7 🎾 ");
             System.out.println("\n=============================================");
             System.out.println();
-            System.out.println("1. Opkrav kontingentbetalning af medlemmer");
-            System.out.println("2. Sorter forventede indbetalinger efter beløb");
-            System.out.println("3. Vis medlemmer i restance");
-            System.out.println("4. Noter medlem der skylder penge");
-            System.out.println("5. Sorter restance medlemmer efter beløb");
-            System.out.println("6. Afslut program");
+            System.out.println("1. Overblik over forventede indbetalinger");
+            System.out.println("2. Sorter restance medlemmer efter beløb");
+            System.out.println("3. Sorter restance medlemmer efter navn");
+            System.out.println("4. Afslut program");
 
 
             int choice = scanner.nextInt();
@@ -36,10 +34,6 @@ public class CashierMenu {
                 case 4:
 
                 case 5:
-
-                case 6:
-
-                case 7:
                     running = false;
                     break;
 
