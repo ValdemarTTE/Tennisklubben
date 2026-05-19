@@ -19,6 +19,7 @@ public class CoachMenu {
             System.out.println("1. Register bedste træningsresultat til en disciplin");
             System.out.println("2. Udtag medlem til turnering");
             System.out.println("3. Se top 5 medlemmer indenfor en disciplin");
+            System.out.println("4. ");
             System.out.println("5. Afslut program");
 
 
