@@ -17,7 +17,7 @@ public class TennisSystemChairman {
 
 
     public void createMember(Scanner sc) {
-        int memberID = random.nextInt(1000);
+        int memberID = generateRandomMemberID();
 
         sc.nextLine();
         System.out.println("Medlem navn: ");
@@ -47,6 +47,27 @@ public class TennisSystemChairman {
 
         memberList.add(newMember);
         filehandler.saveMember(memberList);
+    }
+
+    private int generateRandomMemberID() {
+
+        int memberID;
+
+        while(true) {
+            memberID = random.nextInt(1000);
+
+            boolean exists = false;
+
+            for(Member member : memberList) {
+                if(member.getMemberID() == memberID) {
+                    exists = true;
+                    break;
+                }
+            }
+            if(!exists) {
+                return memberID
+            }
+        }
     }
 
 
