@@ -18,10 +18,10 @@ public class CashierMenu {
             System.out.println();
             System.out.println("1. Opkrav kontingentbetalning af medlemmer");
             System.out.println("2. Sorter forventede indbetalinger efter beløb");
-            System.out.println("4. Vis medlemmer i restance");
-            System.out.println("5. Noter medlem der skylder penge");
-            System.out.println("6. Sorter restance medlemmer efter beløb");
-            System.out.println("7. Afslut program");
+            System.out.println("3. Vis medlemmer i restance");
+            System.out.println("4. Noter medlem der skylder penge");
+            System.out.println("5. Sorter restance medlemmer efter beløb");
+            System.out.println("6. Afslut program");
 
 
             int choice = scanner.nextInt();
@@ -38,8 +38,6 @@ public class CashierMenu {
                 case 5:
 
                 case 6:
-
-                case 7:
                     running = false;
                     break;
 
