@@ -12,6 +12,15 @@ public class ActiveMember extends Member {
         super(name, memberID, age, memberType, date);
     }
 
+    @Override
+    public double getAnnualFee() {
+      if (getAge() < 18){
+          return 800;
+      } if (getAge()>=60){
+          return 0.75*1500;
+      }
+        return 1500;
+    }
 
 
     @Override
