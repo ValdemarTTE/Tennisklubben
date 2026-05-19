@@ -5,7 +5,7 @@ import model.Member;
 
 import java.io.File;
 
-public class MemberValidator implements IValidator<Member> {
+public class MemberValidator implements IValidator {
     private String errorMessage;
 
     @Override
@@ -24,11 +24,6 @@ public class MemberValidator implements IValidator<Member> {
         return true;
     }
 
-    @Override
-    public String getErrorMessage(){
-        return errorMessage;
-    }
-
     private boolean checkAge (int age){
 
         return age > 0 && age < 120;
@@ -37,5 +32,10 @@ public class MemberValidator implements IValidator<Member> {
 
     private boolean checkName (String name){
         return name !=null && !name.trim().isEmpty();
+    }
+
+    @Override
+    public String getErrorMessage(){
+        return errorMessage;
     }
 }
