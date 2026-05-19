@@ -7,6 +7,10 @@ public class PassiveMember extends Member {
         super(name, memberID, age, memberType);
     }
 
+    public PassiveMember(String name, int memberID, int age, MemberType memberType, LocalDate date) {
+        super(name, memberID, age, memberType, date);
+    }
+
     @Override
     public void addDiscipline(Discipline choice) {
         if (choice == Discipline.SINGLE) {

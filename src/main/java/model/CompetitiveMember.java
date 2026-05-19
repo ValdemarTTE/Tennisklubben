@@ -9,6 +9,10 @@ public class CompetitiveMember extends Member {
         super(name, memberID, age, memberType);
     }
 
+    public CompetitiveMember(String name, int memberID, int age, MemberType memberType, LocalDate date) {
+        super(name, memberID, age, memberType, date);
+    }
+
     private String coachName;
     private ArrayList<TrainingResult> results = new ArrayList<>();
 
