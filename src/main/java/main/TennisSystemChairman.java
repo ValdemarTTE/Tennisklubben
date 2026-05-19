@@ -3,6 +3,7 @@ package main;
 import file.CSVHandler;
 import model.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -13,7 +14,6 @@ public class TennisSystemChairman {
     private Random random = new Random();
     private CSVHandler filehandler = new CSVHandler();
     public ArrayList<Member> memberList = new ArrayList<>();
-
 
 
     public void createMember(Scanner sc) {

@@ -38,6 +38,8 @@ public class CashierMenu {
                 case 5:
 
                 case 6:
+
+                case 7:
                     running = false;
                     break;
 

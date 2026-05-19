@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 public class PassiveMember extends Member {
     public PassiveMember(String name, int memberID, int age, MemberType memberType) {
         super(name, memberID, age, memberType);

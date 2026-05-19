@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public abstract class Member {
@@ -11,6 +12,9 @@ public abstract class Member {
     private ArrayList<Member> debts;
     private ArrayList<Discipline> discipline = new ArrayList<>();
     public ArrayList<Member> memberList = new ArrayList<>();
+    public LocalDate date;
+
+
 
 
     public Member(String name, int memberID, int age, MemberType memberType) {
@@ -18,6 +22,7 @@ public abstract class Member {
         this.memberID = memberID;
         this.age = age;
         this.memberType = memberType;
+        this.date = LocalDate.now();
     }
 
     public String getName() {
@@ -68,5 +73,9 @@ public abstract class Member {
         return memberType;
     }
 
+    @Override
+    public String toString() {
+        return name + " " + age + " " + memberID + " " + date;
+    }
 
 }
