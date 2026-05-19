@@ -12,6 +12,11 @@ public class PassiveMember extends Member {
     }
 
     @Override
+    public double getAnnualFee() {
+        return 250;
+    }
+
+    @Override
     public void addDiscipline(Discipline choice) {
         if (choice == Discipline.SINGLE) {
             addDisciplineToList(choice);
