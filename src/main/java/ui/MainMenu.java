@@ -8,8 +8,8 @@ public class MainMenu {
 
     Scanner sc = new Scanner(System.in);
 
-    ChairmanMenu menuA = new ChairmanMenu();
-    CashierMenu menuB = new CashierMenu();
+    ChairmanMenu menuA = new ChairmanMenu(sc);
+    CashierMenu menuB = new CashierMenu(sc);
     CoachMenu menuC = new CoachMenu();
 
     // viser hovedmenu
