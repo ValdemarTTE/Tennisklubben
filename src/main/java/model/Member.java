@@ -10,6 +10,7 @@ public abstract class Member {
     private int age;
     private MemberType memberType;
     public ArrayList<Member> memberList = new ArrayList<>();
+    private double amountPaid;
     public LocalDate date;
 
     public Member(String name, int memberID, int age, MemberType memberType) {
@@ -56,6 +57,13 @@ public abstract class Member {
     public void addMember(Member member) {
         memberList.add(member);
     }
+
+    public abstract double getAnnualFee();
+
+    public double getArrearsAmount() {
+        return getAnnualFee() - amountPaid;
+    }
+
 
 
     public void addDisciplineToList(Discipline disciplineType) {
