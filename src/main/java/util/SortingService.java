@@ -10,7 +10,7 @@ import java.util.List;
 public class SortingService {
 
 
-    public void SortByName(List<Member> members) {
+    public static void SortByName(List<Member> members) {
         Collections.sort(members, new Comparator<Member>() {
             @Override
             public int compare(Member o1, Member o2) {
@@ -19,7 +19,7 @@ public class SortingService {
         });
     }
 
-    public void SortByAge(List<Member> members) {
+    public static void SortByAge(List<Member> members) {
 
         Collections.sort(members, new Comparator<Member>() {
             @Override
