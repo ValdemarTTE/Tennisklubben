@@ -9,8 +9,6 @@ public abstract class Member {
     private int memberID;
     private int age;
     private MemberType memberType;
-    private ArrayList<Member> debts;
-    private ArrayList<Discipline> discipline = new ArrayList<>();
     public ArrayList<Member> memberList = new ArrayList<>();
     public LocalDate date;
 
@@ -85,7 +83,7 @@ public abstract class Member {
 
     @Override
     public String toString() {
-        return name + " " + age + " " + memberID + " " + date;
+        return name + " " + age + " " + memberID + " " + discipline + " " + date;
     }
 
 }

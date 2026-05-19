@@ -31,6 +31,7 @@ public class TennisSystemChairman {
 
             System.out.println("Alder: ");
             int age = sc.nextInt();
+            sc.nextLine();
 
             if(memberTypeString.equalsIgnoreCase("aktiv")) {
                 newMember = new ActiveMember(name, memberID, age, MemberType.ACTIVE);
@@ -39,7 +40,12 @@ public class TennisSystemChairman {
                 newMember = new PassiveMember(name, memberID, age, MemberType.PASSIVE);
                 break;
             } else if(memberTypeString.equalsIgnoreCase("konkurrence")) {
-                newMember = new CompetitiveMember(name, memberID, age, MemberType.COMPETITIVE);
+
+                System.out.println("Discipline: (single, double, mixed double");
+                String input = sc.nextLine();
+                Discipline discipline = Discipline.valueOf(input);
+
+                newMember = new CompetitiveMember(name, memberID, age, MemberType.COMPETITIVE, discipline);
                 break;
             }
 
