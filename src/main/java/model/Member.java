@@ -91,7 +91,13 @@ public abstract class Member {
 
     @Override
     public String toString() {
-        return name + " " + age + " " + memberID + " " + discipline + " " + date;
+        return "Name" + name +
+                ", Age : " + age +
+                ", ID : " + memberID +
+                ", Type : " + discipline +
+                ", Free: "+ getAnnualFee() +
+                ", Arrears:"+ getArrearsAmount()+
+                ", Date: " +date;
     }
 
 }
