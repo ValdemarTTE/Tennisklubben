@@ -5,20 +5,18 @@ import java.util.ArrayList;
 
 public class CompetitiveMember extends Member {
 
-    public CompetitiveMember(String name, int memberID, int age, MemberType memberType) {
+    public CompetitiveMember(String name, int memberID, int age, MemberType memberType, Discipline discipline) {
         super(name, memberID, age, memberType);
+        this.discipline = discipline;
     }
 
     public CompetitiveMember(String name, int memberID, int age, MemberType memberType, LocalDate date) {
         super(name, memberID, age, memberType, date);
     }
 
-    private String coachName;
+    private Discipline discipline;
     private ArrayList<TrainingResult> results = new ArrayList<>();
 
-    public String getCoach() {
-        return coachName;
-    }
 
     public void addResult(TrainingResult result) {
         results.add(result);
